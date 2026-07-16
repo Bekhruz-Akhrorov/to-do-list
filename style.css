@@ -1,0 +1,172 @@
+body{
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container{
+    background: black;
+    width: 90%;
+    max-width: 450px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10 25px black;
+    text-align: center;
+}
+
+h1{
+    margin-bottom: 24px;
+    color: #444;
+    font-weight: 600;
+}
+
+.input-box{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+input{
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 16px;
+    border: 2px solid black;
+}
+
+button{
+    padding: 10px 18px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover{
+    background: #5a67d8;
+    transform: scale(1.05);
+}
+
+.mode{
+    padding: 10px 18px;
+    background: #186742;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+    margin-bottom: 15px;
+}
+
+.mode:hover{
+    background: #52a17d;
+    transform: scale(1.05);
+}
+
+ul{
+    list-style: none;
+    margin-top: 25px;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li{
+    background: #f9f9ff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, background 0.3s;
+}
+
+li:hover{
+    transform: translateY(-2px);
+    background: #f0f0ff;
+}
+
+.task-text{
+    flex: 1;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 10px;
+    word-break: break-word;
+}
+
+.completed{
+    text-decoration: line-through;
+    color: #1d1d1d;
+}
+
+.task-buttons button{
+    margin-left: 6px;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 13px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.task-buttons button:hover{
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.complete-btn{
+    background: #48bb78;
+    color: white;
+}
+
+.edit-btn{
+    background: #f6ad55;
+    color: white;
+}
+
+.delete-btn{
+    background: #f56565;
+    color: white;
+}
+
+body.light{
+    background: linear-gradient(90deg, #42c0c0, #30aa7b);
+}
+
+body.light .app-container{
+    background: white;
+    color: black;
+}
+
+body.light h1{
+    color: black;
+}
+
+body.light .complete-btn{
+    background: #94e7b7;
+    color: black;
+}
+
+body.light .edit-btn{
+    background: #dfc8ab;
+    color: black;
+}
+
+body.light .delete-btn{
+    background: #d29393;
+    color: black;
+}
+
+body.light button{
+    transform: scale(1.05);
+}
+
+body.light button:hover{
+    transform: scale(1.1);
+}

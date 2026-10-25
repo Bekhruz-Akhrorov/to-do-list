@@ -1,0 +1,282 @@
+:root {
+    color-scheme: dark;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 32px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(92, 101, 255, 0.62), transparent 38%),
+        radial-gradient(ellipse at 85% 80%, rgba(207, 76, 190, 0.5), transparent 35%),
+        linear-gradient(135deg, #101932 0%, #29235f 52%, #512e71 100%);
+    color: #f8f8ff;
+}
+
+.app-container {
+    width: min(100%, 480px);
+    padding: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 26px;
+    background: linear-gradient(145deg, rgba(28, 34, 66, 0.9), rgba(29, 24, 54, 0.82));
+    box-shadow: 0 24px 70px rgba(8, 9, 32, 0.42), inset 0 1px rgba(255, 255, 255, 0.12);
+    text-align: center;
+    backdrop-filter: blur(18px);
+}
+
+h1 {
+    margin: 0 0 24px;
+    color: #fff;
+    font-size: clamp(1.8rem, 6vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 16px;
+    border: 1px solid rgba(215, 218, 255, 0.22);
+    border-radius: 14px;
+    outline: none;
+    background: rgba(9, 13, 35, 0.45);
+    color: #fff;
+    font: inherit;
+    font-size: 15px;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+input::placeholder {
+    color: #b7b8d0;
+}
+
+input:focus {
+    border-color: #a99aff;
+    background: rgba(9, 13, 35, 0.68);
+    box-shadow: 0 0 0 3px rgba(151, 132, 255, 0.2);
+}
+
+button {
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8b7cff, #c16be8);
+    box-shadow: 0 7px 18px rgba(133, 96, 232, 0.24);
+    color: #fff;
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(133, 96, 232, 0.36);
+    filter: brightness(1.08);
+}
+
+button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+}
+
+.mode {
+    margin-bottom: 18px;
+    padding: 9px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 999px;
+    background: linear-gradient(120deg, rgba(81, 211, 190, 0.24), rgba(91, 140, 255, 0.32));
+    box-shadow: none;
+    font-size: 13px;
+}
+
+.mode:hover {
+    box-shadow: 0 8px 20px rgba(78, 201, 194, 0.2);
+}
+
+ul {
+    max-height: 340px;
+    margin: 24px 0 0;
+    padding: 0 4px 0 0;
+    overflow-y: auto;
+    list-style: none;
+    scrollbar-color: rgba(192, 174, 255, 0.6) transparent;
+    scrollbar-width: thin;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.045));
+    text-align: left;
+    transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    border-color: rgba(204, 188, 255, 0.42);
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.07));
+}
+
+.task-text {
+    min-width: 0;
+    flex: 1;
+    margin-left: 4px;
+    color: #f4f2ff;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.completed {
+    color: #aaa8bd;
+    text-decoration: line-through;
+}
+
+.task-buttons {
+    display: flex;
+    flex-shrink: 0;
+    gap: 6px;
+}
+
+.task-buttons button {
+    padding: 7px 9px;
+    border-radius: 9px;
+    box-shadow: none;
+    font-size: 12px;
+}
+
+.complete-btn {
+    background: linear-gradient(135deg, #35bd9b, #39a978);
+}
+
+.edit-btn {
+    background: linear-gradient(135deg, #f2b657, #ed895d);
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #f07887, #d94f71);
+}
+
+body.light {
+    color-scheme: light;
+    background:
+        radial-gradient(ellipse at 12% 16%, rgba(77, 220, 203, 0.62), transparent 38%),
+        radial-gradient(ellipse at 88% 82%, rgba(128, 126, 255, 0.52), transparent 36%),
+        linear-gradient(135deg, #d8fff2 0%, #a9e8e4 48%, #c7baff 100%);
+    color: #252344;
+}
+
+body.light .app-container {
+    border-color: rgba(255, 255, 255, 0.72);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(243, 240, 255, 0.84));
+    box-shadow: 0 24px 70px rgba(47, 74, 115, 0.2), inset 0 1px #fff;
+}
+
+body.light h1 {
+    color: #302b59;
+}
+
+body.light input {
+    border-color: rgba(77, 75, 133, 0.2);
+    background: rgba(255, 255, 255, 0.72);
+    color: #282448;
+}
+
+body.light input::placeholder {
+    color: #85839e;
+}
+
+body.light input:focus {
+    border-color: #8173dc;
+    background: #fff;
+}
+
+body.light .mode {
+    border-color: rgba(66, 132, 147, 0.24);
+    background: linear-gradient(120deg, #d0f5ea, #d9e2ff);
+    color: #315a69;
+}
+
+body.light li {
+    border-color: rgba(75, 70, 127, 0.12);
+    background: linear-gradient(110deg, rgba(255, 255, 255, 0.9), rgba(239, 237, 255, 0.82));
+}
+
+body.light li:hover {
+    border-color: rgba(107, 91, 186, 0.3);
+    background: linear-gradient(110deg, #fff, #f1eeff);
+}
+
+body.light .task-text {
+    color: #373252;
+}
+
+body.light .completed {
+    color: #89869e;
+}
+
+body.light .complete-btn,
+body.light .edit-btn,
+body.light .delete-btn {
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 26px 18px;
+        border-radius: 22px;
+    }
+
+    .input-box {
+        gap: 8px;
+    }
+
+    .input-box button {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .task-buttons {
+        align-self: flex-end;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
